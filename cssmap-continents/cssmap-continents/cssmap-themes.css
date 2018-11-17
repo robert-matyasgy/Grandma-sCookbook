@@ -139,6 +139,27 @@
  .cssmap-250 .cssmap-loader{font-size:10px}
  .cssmap-210 .cssmap-loader{font-size:9px}
 
+
+
+
+h1 {
+    color: black;
+    text-align: center;
+    font-size: 80px;
+}
+body {
+    background-color: blue;
+}
+
+
+
+
+
+
+
+
+
+
 /* ---------------------------------------------------------------------------------------------------- *
  *                               DO NOT EDIT FROM THIS POINT!
  * ---------------------------------------------------------------------------------------------------- */
