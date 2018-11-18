@@ -1,7 +1,7 @@
 h1 {
     color: rgb(195,163,67);
     text-align: center;
-    font-size: 80px;
+    font-size: 60px;
     font-family: cursive;
     font-style: italic;
 }
@@ -20,6 +20,10 @@ min-height: 1000px;
 a {
     color: rgb(195,163,67);
     text-align: center;
+    font-size: 30px;
 }
-
-
+p {
+    color: rgb(195,163,67);
+    text-align: center;
+    font-size: 30px;
+}
