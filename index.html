@@ -2,13 +2,14 @@
 <html>
 <head>
 <title>Page Title</title>
-
+<link rel="stylesheet" type="text/css" href="style.css">
 <!-- CSSMap STYLESHEET - CONTINENTS -->
 <link rel="stylesheet" type="text/css" href="/cssmap-continents/cssmap-continents/cssmap-continents.css"media="screen" />
 </head>
 <body>
-
+<div>
 <h1>GRANDMA'S COOKBOOK</h1>
+
 
 
 <!-- jQuery -->
@@ -30,57 +31,62 @@ $("#map-continents").CSSMap({
 <!-- CSSMap - Continents -->
 <div id="map-continents">
  <ul class="continents">
-  <li class="c1"><a href="#africa">Africa</a></li>
-  <li class="c2"><a href="#asia">Asia</a></li>
-  <li class="c3"><a href="#australia">Australia</a></li>
-  <li class="c4"><a href="#europe">Europe</a></li>
-  <li class="c5"><a href="#north-america">North America</a></li>
-  <li class="c6"><a href="#south-america">South America</a></li>
+  <li class="c1"><a href="#meat-veg">Africa</a></li>
+  <li class="c2"><a href="#meat-veg">Asia</a></li>
+  <li class="c3"><a href="#meat-veg">Australia</a></li>
+  <li class="c4"><a href="#meat-veg">Europe</a></li>
+  <li class="c5"><a href="#meat-veg">North America</a></li>
+  <li class="c6"><a href="#meat-veg">South America</a></li>
  </ul>
 </div>
 <!-- END OF THE CSSMap - Continents -->
-
+<center><p id="clickon">CLICK ON ONE CONTINENT</p></center>
 <!-- CSSMap - list of addresses -->
 <div id="demo-agents">
  <ul>
-  <li id="africa">
+  
+  <div id="meat-veg">
+      
+   <a href="#vegetables"><img src="./icons/vegetables.png " alt="Vegtables" ></a>
 
-    <!-- Africa -->
+   <a href="#meat"> <img src="./icons/meat.png" alt="Meat-eaters" > </a>
+  </div>
 
-  </li>
-  <li id="asia">
+  <div id="vegetables">
+      
+   <a href="#typofdish"><img src="./icons/fish.png" alt="Pescatarian"> </a>
 
-    <!-- Asia -->
+   <a href="#typofdish"><img src="./icons/salad.png" alt="Vegan" > </a>
 
-  </li>
-  <li id="australia">
+  </div>
 
-    <!-- Australia -->
+  <div id="meat">
+      
+   <a href="#typofdish"><img src="./icons/chicken.png" alt="Chicken"> </a>
+   <a href="#typofdish"> <img src="./icons/steak.png" alt="Beef Steak"> </a>
+   <a href="#typofdish"> <img src="./icons/pork.png" alt="Pork"> </a>
+   <a href="#typofdish"> <img src="./icons/fish.png" alt="Fish"> </a>
 
-  </li>
-  <li id="europe">
+  </div>
+  
+  <div id="typofdish">
+      
+   <a href="./"><p>Main course  </p></a>
+   <a href="./"> <p>Desert  </p> </a>
+   <a href="./"> <p>Desert  </p> </a>
 
-    <!-- Europe -->
+  </div>
 
-  </li>
-  <li id="north-america">
+  
 
-    <!-- North America -->
-
-  </li>
-  <li id="south-america">
-
-    <!-- South America -->
-
-  </li>
- </ul>
-</div>
 <!-- END OF THE CSSMap - list of addresses -->
 
 
 
 
 
+</div>
+</div>
 </script>
 </body>
 </html>
