@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
+</head>
+<body>
+
+  <h1>Recipes</h1>
+  <ul id="recipes"></ul>
+
+  <script>
+
+      var cuisine;
+      var diet;
+      function createNode(element) {
+          return document.createElement(element);
+      }
+
+      function append(parent, el) {
+          return parent.appendChild(el);
+      }
+
+      const ul = document.getElementById('recipes');
+      const url = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine=japanese&diet=vegetarian&excludeIngredients=coconut&instructionsRequired=true&limitLicense=false&number=50&offset=0&query==main+course";
+      fetch(url, {
+          headers :{
+              "X-Mashape-Key": "uoPd5nZAbgmshcPU10Q71TmtqUfRp1QYG0ejsnOcsbpc71Vj3f",
+              "accept": "application/json"
+          }
+      })
+          .then((resp) => resp.json())
+          .then(function(data) {
+              console.log(data);
+              let authors = data.results;
+              return authors.map(function(author) {
+                  let li = createNode('li'),
+                      img = createNode('img'),
+                      span = createNode('span'),
+                        anchor = createNode('a');
+
+                  img.src = data['baseUri'] + author.image;
+                  img.style.height = "300px";
+                  img.style.width = "300px";
+                  //${data['baseUri']}${author.imageURL}
+                  span.innerHTML = `${author.title}`;
+                  //span.innerHTML = str.link(span.innerHTML);
+                  var newUrl = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/' + `${author.id}` + '/information?includeNutrition=false';
+                  fetch(newUrl, {
+                      headers : {
+                          "X-Mashape-Key": "uoPd5nZAbgmshcPU10Q71TmtqUfRp1QYG0ejsnOcsbpc71Vj3f",
+                          "accept": "application/json"
+                      }
+                  })
+                      .then((resp) => resp.json())
+                      .then(function(newData){
+                          console.log(newData);
+                          anchor.setAttribute("href", newData.sourceUrl);
+                          anchor.appendChild(img);
+                          span.innerHTML = span.innerHTML.link(newData.sourceUrl);
+                      })
+                  append(li, anchor);
+                  append(li, span);
+                  append(ul, li);
+
+              })
+          })
+          .catch(function(error) {
+              console.log(error);
+          });
+
+
+
+      var items = document.getElementById('recipes').getElementsByTagName("li");
+      var listImg;
+      console.log(items);
+      for (var i = 0; i < items.length; ++i) {
+          console.log("in loop");
+          listImg = items[i].getElementsByTagName('img');
+          if(listImg && listImg.style) {
+              listImg.style.height = '100px';
+              listImg.style.width = '200px';
+          }
+          // do something with items[i], which is a <li> element
+      }
+  </script>
+
+  <style>
+      span {
+          /*
+         position:absolute;
+         length:100px;
+       /* fallback */
+          /*max-height: X*N;*/
+          display: block;
+          width: 500px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          font-family: 'Lora', serif;
+          background-color: #27967b;
+          border-radius: 5px;
+
+      }
+      li {
+          width: 550px;
+          height: 200px;
+          margin-left: 10px;
+          margin-top: 10px;
+          margin-right: 10px;
+          display: inline-block;
+      }
+      h1
+      {
+          font-family: 'Concert One', cursive;
+          font-size: 80px;
+      }
+      a {
+          color: beige;
+      }
+      body
+      {
+          background-color:
+      }
+
+  </style>
+
+</body>
+</html>
