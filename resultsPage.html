@@ -12,8 +12,11 @@
 
   <script>
 
-      var cuisine;
-      var diet;
+      var cuisine = "japanese";
+      var diet_query = "vegetarian";
+      var dish_type = "main+course";
+      var req_ingredients = "";
+
       function createNode(element) {
           return document.createElement(element);
       }
@@ -23,7 +26,7 @@
       }
 
       const ul = document.getElementById('recipes');
-      const url = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine=japanese&diet=vegetarian&excludeIngredients=coconut&instructionsRequired=true&limitLicense=false&number=50&offset=0&query==main+course";
+      var url = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=false&cuisine=" + cuisine + "&excludeIngredients=&fillIngredients=false&includeIngredients=" + req_ingredients + "&instructionsRequired=false&limitLicense=false&number=50&offset=0&query=" + diet_query + "+&ranking=2&type="+dish_type;
       fetch(url, {
           headers :{
               "X-Mashape-Key": "uoPd5nZAbgmshcPU10Q71TmtqUfRp1QYG0ejsnOcsbpc71Vj3f",
@@ -40,9 +43,10 @@
                       span = createNode('span'),
                         anchor = createNode('a');
 
-                  img.src = data['baseUri'] + author.image;
-                  img.style.height = "300px";
-                  img.style.width = "300px";
+                  //img.src = data['baseUri'] + author.image;
+                  img.src = author.image;
+                  img.style.height = "400px";
+                  img.style.width = "400px";
                   //${data['baseUri']}${author.imageURL}
                   span.innerHTML = `${author.title}`;
                   //span.innerHTML = str.link(span.innerHTML);
@@ -99,7 +103,7 @@
           white-space: nowrap;
           text-overflow: ellipsis;
           font-family: 'Lora', serif;
-          background-color: #27967b;
+          background-color: #e5897b;
           border-radius: 5px;
 
       }
@@ -115,13 +119,19 @@
       {
           font-family: 'Concert One', cursive;
           font-size: 80px;
+          margin-bottom: 0;
       }
       a {
           color: beige;
       }
       body
       {
-          background-color:
+          background-color:#fff0f5;
+      }
+
+      img
+      {
+          border-radius: 10px;
       }
 
   </style>
