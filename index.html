@@ -1,33 +1,18 @@
-<!DOCTYPE html>
+@@ -2,15 +2,16 @@
 <html>
 <head>
-<title>GRANDMA'S COOKBOOK</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+<title>Page Title</title>
+ <link rel="stylesheet" type="text/css" href="style.css">
 <!-- CSSMap STYLESHEET - CONTINENTS -->
 <link rel="stylesheet" type="text/css" href="/cssmap-continents/cssmap-continents/cssmap-continents.css"media="screen" />
 </head>
 <body>
-<div>
+ <div>
 <h1>GRANDMA'S COOKBOOK</h1>
-
-
-<center><p id="clickon">CLICK ON ONE CONTINENT</p></center>
-<!-- jQuery -->
+ <!-- jQuery -->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<!-- CSSMap SCRIPT -->
-<script type="text/javascript" src="https://cssmapsplugin.com/5/jquery.cssmap.min.js"></script>
-
-<script type="text/javascript">
-$(document).ready(function(){
-
-// CSSMap;
-$("#map-continents").CSSMap({
-  "size": 1450
-});
-// END OF THE CSSMap;
-
-});</script>
+ @@ -30,57 +31,62 @@ <h1>GRANDMA'S COOKBOOK</h1>
+ <center><p id="clickon">CLICK ON ONE CONTINENT</p></center>
 <!-- CSSMap - Continents -->
 <div id="map-continents">
  <ul class="continents">
@@ -40,52 +25,47 @@ $("#map-continents").CSSMap({
  </ul>
 </div>
 <!-- END OF THE CSSMap - Continents -->
-
+ <center><p id="clickon">CLICK ON ONE CONTINENT</p></center>
 <!-- CSSMap - list of addresses -->
 <div id="demo-agents">
- <ul>
+
   
   <div id="meat-veg">
       
-   <center><a href="#vegetables"><img src="./icons/vegetables.png " alt="Vegtables" ></a></center>
-
-   <center><a href="#meat"> <img src="./icons/meat.png" alt="Meat-eaters" > </a></center><br><br>
+   <a href="#vegetables"><img src="./icons/vegetables.png " alt="Vegtables" ></a>
+     <!-- Asia -->
+   <a href="#meat"> <img src="./icons/meat.png" alt="Meat-eaters" > </a>
   </div>
-
+   
   <div id="vegetables">
       
-   <center><a href="#typofdish"><img src="./icons/fish.png" alt="Pescatarian"> </a>
-
-   <a href="#typofdish"><img src="./icons/salad.png" alt="Vegan" > </a></center>
-
+   <a href="#typofdish"><img src="./icons/fish.png" alt="Pescatarian"> </a>
+     <!-- Australia -->
+   <a href="#typofdish"><img src="./icons/salad.png" alt="Vegan" > </a>
+   
   </div>
-
+     <!-- Europe -->
   <div id="meat">
-    
-   <center><a href="#typofdish"><img src="./icons/chicken.png" alt="Chicken"> </a>
-   <a href="#typofdish"> <img src="./icons/steak.png" alt="Beef Steak"> </a></center><br>
-   <center><a href="#typofdish"> <img src="./icons/pork.png" alt="Pork"> </a>
-   <a href="#typofdish"> <img src="./icons/fish.png" alt="Fish"> </a></center><br><br>
+      
+   <a href="#typofdish"><img src="./icons/chicken.png" alt="Chicken"> </a>
+   <a href="#typofdish"> <img src="./icons/steak.png" alt="Beef Steak"> </a>
+   <a href="#typofdish"> <img src="./icons/pork.png" alt="Pork"> </a>
+   <a href="#typofdish"> <img src="./icons/fish.png" alt="Fish"> </a>
 
   </div>
   
   <div id="typofdish">
       
-   <a href="./resultsPage.html"><p>Main course  </p></a>
-   <a href="./resultsPage.html"> <p>Desert  </p> </a>
-   <a href="./resultsPage.html"> <p>Desert  </p> </a>
-
+   <a href="./resultsPage2"><p>Main course  </p></a>
+   <a href="./resultsPage3"> <p>Starter  </p> </a>
+   <a href="./resultsPage1"> <p>Soup  </p> </a>
+     <!-- North America -->
   </div>
-
   
-
-<!-- END OF THE CSSMap - list of addresses -->
-
-
-
-
-
+ 
 </div>
+<!-- END OF THE CSSMap - list of addresses -->
+ </div>
 </div>
 </script>
 </body>
